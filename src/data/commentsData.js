@@ -31,6 +31,25 @@ export const getComments = async () => {
       userId: "2",
       parentId: "2",
       createdAt: "2021-08-16T23:00:33.010+02:00"
+    },
+    {
+      id: "5",
+      body: "2nd comment first child",
+      username: "John",
+      userId: "2",
+      parentId: "1",
+      createdAt: "2021-08-16T23:00:33.010+02:00"
     }
   ];
 };
+
+export const createComment = async (text, parentId) => {
+  return {
+    id: Math.round().toString(36).substr(2, 9),
+    body: text,
+    parentId,
+    userId: "1",
+    username: "John",
+    createdAt: new Date().toISOString()
+  }
+}
