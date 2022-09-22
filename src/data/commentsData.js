@@ -45,7 +45,7 @@ export const getComments = async () => {
 
 export const createComment = async (text, parentId) => {
   return {
-    id: Math.round().toString(36).substr(2, 9),
+    id: new Date().toISOString(),
     body: text,
     parentId,
     userId: "1",
@@ -53,3 +53,9 @@ export const createComment = async (text, parentId) => {
     createdAt: new Date().toISOString()
   }
 }
+
+export const deleteCommentApi = async (commentId) => {
+  return {}
+
+}
+
